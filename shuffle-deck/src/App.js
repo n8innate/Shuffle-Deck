@@ -16,8 +16,7 @@ export default function App() {
       });
     }
   }
-  
-  // console.log(deck);
+
   
   const shuffle = () => {
     console.log('Shuffling...');
