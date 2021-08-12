@@ -1,5 +1,5 @@
 // import "./styles.css";
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 
 export default function App() {
   const suits = ["♠", "♡", "♢", "♣"];
@@ -8,7 +8,6 @@ export default function App() {
   const deck = [];
   
   const [deckOfCards, setDeckOfCards] = useState(deck);
-  // let [hasShuffled, setHasShuffled] = useState(false);
   
   for (let i = 0; i < suits.length; i++) {
     for (let j = 0; j < cards.length; j++) {
