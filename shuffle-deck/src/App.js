@@ -1,12 +1,8 @@
-import {useState} from 'react';
-
 export default function App() {
   const suits = ["♠", "♡", "♢", "♣"];
   const cards = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
 
   const deck = [];
-  
-  const [deckOfCards, setDeckOfCards] = useState(deck);
   
   for (let i = 0; i < suits.length; i++) {
     for (let j = 0; j < cards.length; j++) {
@@ -16,13 +12,9 @@ export default function App() {
       });
     }
   }
+
   
-  // console.log(deck);
-  
-  const shuffle = () => {
-    console.log('Shuffling...');
-    setDeckOfCards([...deckOfCards].sort(() => Math.random() - 0.5));
-  };
+  const shuffle = () => {};
 
 
   return (
@@ -33,7 +25,7 @@ export default function App() {
         </button>
       </section>
       <ol className="list">
-        {deckOfCards.map(({ suit, value }) => (
+        {deck.map(({ suit, value }) => (
           <li className="list__item" key={`${suit}-${value}`}>
             <div className="card">
               {suit} {value}
