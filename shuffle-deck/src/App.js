@@ -1,5 +1,5 @@
 // import "./styles.css";
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 export default function App() {
   const suits = ["♠", "♡", "♢", "♣"];
@@ -7,7 +7,8 @@ export default function App() {
 
   const deck = [];
   
-  let [deckOfCards, setDeckOfCards] = useState(deck);
+  const [deckOfCards, setDeckOfCards] = useState(deck);
+  // let [hasShuffled, setHasShuffled] = useState(false);
   
   for (let i = 0; i < suits.length; i++) {
     for (let j = 0; j < cards.length; j++) {
@@ -18,12 +19,13 @@ export default function App() {
     }
   }
   
-  console.log(deck)
-  
+  // console.log(deck);
   
   const shuffle = () => {
-    setDeckOfCards(deck.sort(() => Math.random() - 0.5));
+    console.log('Shuffling...');
+    setDeckOfCards([...deckOfCards].sort(() => Math.random() - 0.5));
   };
+
 
   return (
     <div>
